@@ -1,0 +1,13 @@
+@import "menu";
+
+.open, .close {
+    font-size: 36px;
+    margin: 60px;
+    cursor: pointer;
+}
+.global p {
+    margin: 100px;
+}
+.open {
+    background: rgba(50, 50, 50, 0.3);
+}

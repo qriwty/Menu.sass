@@ -38,6 +38,7 @@ $menu__bar-background: rgba(236, 240, 241, 1.0);
 $menu__bar-transition: all;
 $menu__bar-transition-speed: 0.4s;
 $menu__bar-transition-type: ease-out;
+$menu__bar-box-shadow: none;
 $menu__bar-box-shadow-value: -10px 0 30px 0;
 $menu__bar-box-shadow-color: rgba(124, 252, 0, 0.7);
 
@@ -55,18 +56,18 @@ $global__menu-filter: blur($global__menu-filter-value);
             transition: $menu-transition $menu-transition-speed $menu-transition-type;
 }
 @mixin menu__bar-border-left() {
-    -webkit-box-shadow: $menu__bar-box-shadow-value $menu__bar-box-shadow-color;
-       -moz-box-shadow: $menu__bar-box-shadow-value $menu__bar-box-shadow-color;
-        -ms-box-shadow: $menu__bar-box-shadow-value $menu__bar-box-shadow-color;
-         -o-box-shadow: $menu__bar-box-shadow-value $menu__bar-box-shadow-color;
-            box-shadow: $menu__bar-box-shadow-value $menu__bar-box-shadow-color;
+    -webkit-box-shadow: $menu__bar-border $menu__bar-border-color;
+       -moz-box-shadow: $menu__bar-border $menu__bar-border-color;
+        -ms-box-shadow: $menu__bar-border $menu__bar-border-color;
+         -o-box-shadow: $menu__bar-border $menu__bar-border-color;
+            box-shadow: $menu__bar-border $menu__bar-border-color;
 }
 @mixin menu__bar-box-shadow() {
-    -webkit-box-shadow: $menu__bar-box-shadow-value $menu__bar-box-shadow-color;
-       -moz-box-shadow: $menu__bar-box-shadow-value $menu__bar-box-shadow-color;
-        -ms-box-shadow: $menu__bar-box-shadow-value $menu__bar-box-shadow-color;
-         -o-box-shadow: $menu__bar-box-shadow-value $menu__bar-box-shadow-color;
-            box-shadow: $menu__bar-box-shadow-value $menu__bar-box-shadow-color;
+    -webkit-box-shadow: menu__bar-box-shadow $menu__bar-box-shadow-value $menu__bar-box-shadow-color;
+       -moz-box-shadow: menu__bar-box-shadow $menu__bar-box-shadow-value $menu__bar-box-shadow-color;
+        -ms-box-shadow: menu__bar-box-shadow $menu__bar-box-shadow-value $menu__bar-box-shadow-color;
+         -o-box-shadow: menu__bar-box-shadow $menu__bar-box-shadow-value $menu__bar-box-shadow-color;
+            box-shadow: menu__bar-box-shadow $menu__bar-box-shadow-value $menu__bar-box-shadow-color;
 }
 @mixin menu__bar-transform() {
     -webkit-transform: translate3d(100%, 0, 0);

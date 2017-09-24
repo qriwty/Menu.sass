@@ -32,13 +32,12 @@ $menu-transition-type: ease-out;
 
 // Menu bar
 $menu__bar-width: 250px;
-$menu__bar-border: 1px solid;
+$menu__bar-border-value: 1px solid;
 $menu__bar-border-color: rgba(0, 0, 0, 0.4);
 $menu__bar-background: rgba(236, 240, 241, 1.0);
 $menu__bar-transition: all;
 $menu__bar-transition-speed: 0.4s;
 $menu__bar-transition-type: ease-out;
-$menu__bar-box-shadow: none;
 $menu__bar-box-shadow-value: -10px 0 30px 0;
 $menu__bar-box-shadow-color: rgba(124, 252, 0, 0.7);
 
@@ -46,6 +45,10 @@ $menu__bar-box-shadow-color: rgba(124, 252, 0, 0.7);
 $global__menu-translate: -250px;
 $global__menu-filter-value: 3px;
 $global__menu-filter: blur($global__menu-filter-value);
+
+// For mixins
+$menu__bar-border-left: false;
+$menu__bar-box-shadow: false;
 
 // *** Mixins ***
 @mixin menu-transition() {
@@ -55,19 +58,37 @@ $global__menu-filter: blur($global__menu-filter-value);
          -o-transition: $menu-transition $menu-transition-speed $menu-transition-type;
             transition: $menu-transition $menu-transition-speed $menu-transition-type;
 }
-@mixin menu__bar-border-left() {
-    -webkit-box-shadow: $menu__bar-border $menu__bar-border-color;
-       -moz-box-shadow: $menu__bar-border $menu__bar-border-color;
-        -ms-box-shadow: $menu__bar-border $menu__bar-border-color;
-         -o-box-shadow: $menu__bar-border $menu__bar-border-color;
-            box-shadow: $menu__bar-border $menu__bar-border-color;
+@mixin menu__bar-border-left($menu__bar-border-left) {
+    @if $menu__bar-border-left == false {
+        -webkit-border-left: none;
+           -moz-border-left: none;
+            -ms-border-left: none;
+             -o-border-left: none;
+                border-left: none;
+    }
+    @if $menu__bar-border-left == true {
+        -webkit-border-left: $menu__bar-border-value $menu__bar-border-color;
+           -moz-border-left: $menu__bar-border-value $menu__bar-border-color;
+            -ms-border-left: $menu__bar-border-value $menu__bar-border-color;
+             -o-border-left: $menu__bar-border-value $menu__bar-border-color;
+                border-left: $menu__bar-border-value $menu__bar-border-color;
+    }
 }
-@mixin menu__bar-box-shadow() {
-    -webkit-box-shadow: menu__bar-box-shadow $menu__bar-box-shadow-value $menu__bar-box-shadow-color;
-       -moz-box-shadow: menu__bar-box-shadow $menu__bar-box-shadow-value $menu__bar-box-shadow-color;
-        -ms-box-shadow: menu__bar-box-shadow $menu__bar-box-shadow-value $menu__bar-box-shadow-color;
-         -o-box-shadow: menu__bar-box-shadow $menu__bar-box-shadow-value $menu__bar-box-shadow-color;
-            box-shadow: menu__bar-box-shadow $menu__bar-box-shadow-value $menu__bar-box-shadow-color;
+@mixin menu__bar-box-shadow($menu__bar-box-shadow) {
+    @if $menu__bar-box-shadow == false {
+        -webkit-box-shadow: none;
+           -moz-box-shadow: none;
+            -ms-box-shadow: none;
+             -o-box-shadow: none;
+                box-shadow: none;
+    }
+    @if $menu__bar-box-shadow == true {
+        -webkit-box-shadow: $menu__bar-box-shadow-value $menu__bar-box-shadow-color;
+           -moz-box-shadow: $menu__bar-box-shadow-value $menu__bar-box-shadow-color;
+            -ms-box-shadow: $menu__bar-box-shadow-value $menu__bar-box-shadow-color;
+             -o-box-shadow: $menu__bar-box-shadow-value $menu__bar-box-shadow-color;
+                box-shadow: $menu__bar-box-shadow-value $menu__bar-box-shadow-color;
+    }
 }
 @mixin menu__bar-transform() {
     -webkit-transform: translate3d(100%, 0, 0);
@@ -139,8 +160,8 @@ $global__menu-filter: blur($global__menu-filter-value);
         background: $menu__bar-background;
         @include menu__bar-transition();
         @include menu__bar-transform();
-        @include menu__bar-border-left();
-        @include menu__bar-box-shadow();
+        @include menu__bar-border-left(false);
+        @include menu__bar-box-shadow(false);
 
         &.active {
             @include menu__bar-active();

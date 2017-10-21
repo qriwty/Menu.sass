@@ -24,46 +24,46 @@ Using before global container with content
 
 // *** Styles ***
 .menu {
-    z-index: $menu-z-index;
-    position: fixed;
+  z-index: $menu-z-index;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: $menu-background;
+  visibility: hidden;
+  opacity: 0;
+  @include menu-transition();
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .menu__bar {
+    position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
-    left: 0;
-    background: $menu-background;
-    visibility: hidden;
-    opacity: 0;
-    @include menu-transition();
+    width: $menu__bar-width;
+    background: $menu__bar-background;
+    @include menu__bar-transition();
+    @include menu__bar-transform($transform-gpu);
+    @include menu__bar-border-left($menu__bar-border-left);
+    @include menu__bar-box-shadow($menu__bar-box-shadow);
 
     &.active {
-        visibility: visible;
-        opacity: 1;
+      @include menu__bar-active();
     }
-
-    .menu__bar {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        width: $menu__bar-width;
-        background: $menu__bar-background;
-        @include menu__bar-transition();
-        @include menu__bar-transform($transform-gpu);
-        @include menu__bar-border-left($menu__bar-border-left);
-        @include menu__bar-box-shadow($menu__bar-box-shadow);
-
-        &.active {
-            @include menu__bar-active();
-        }
-    }
+  }
 }
 
 .global {
-    width: 100%;
-    @include global-transition();
+  width: 100%;
+  @include global-transition();
 
-    &.menu-active {
-        @include global__menu-filter();
-        @include global-transform-menu-active($transform-gpu);
-    }
+  &.menu-active {
+    @include global__menu-filter();
+    @include global-transform-menu($transform-gpu);
+  }
 }

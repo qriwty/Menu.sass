@@ -14,10 +14,10 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: $menu-background;
   visibility: hidden;
   opacity: 0;
   @include menu-transition();
+  @include menu-background($menu-background-use);
 
   &.active {
     visibility: visible;

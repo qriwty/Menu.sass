@@ -1,5 +1,14 @@
 // *** Mixins ***
 
+@mixin menu-background($menu-background-use) {
+  @if $menu-background-use == true {
+    background: $menu-background;
+  }
+
+  @if $menu-background-use == false {
+    background: none;
+  }
+}
 @mixin menu-transition() {
   transition: $menu-transition $menu-transition-speed $menu-transition-type;
 }

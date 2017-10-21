@@ -24,7 +24,8 @@ $global-filter-value: 3px;
 $global-filter: blur($global-filter-value);
 
 // Parameters
-$menu__bar-border-left: false;
+$menu-background-use: false;
+$menu__bar-border-left: true;
 $menu__bar-box-shadow: false;
 $transform-gpu: false;
 $global-filter-use: false;

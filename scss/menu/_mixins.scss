@@ -1,5 +1,11 @@
 // *** Mixins ***
 
+@mixin coupled-menu($coupled-menu) {
+  @if $coupled-menu == false {
+    transform: none !important;
+    transition: none !important;
+  }
+}
 @mixin menu-background($menu-background-use) {
   @if $menu-background-use == true {
     background: $menu-background;
@@ -48,7 +54,7 @@
 @mixin global-transition() {
   transition: $menu__bar-transition $menu__bar-transition-speed $menu__bar-transition-type;
 }
-@mixin global-transform-menu($transform-gpu) {
+@mixin global-transform($transform-gpu) {
   @if $transform-gpu == true {
     transform: translate3d($global-translate, 0, 0);
   }

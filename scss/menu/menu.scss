@@ -45,9 +45,11 @@
 .global {
   width: 100%;
   @include global-transition();
+  @include coupled-menu($coupled-menu);
 
   &.menu-active {
     @include global-filter($global-filter-use);
-    @include global-transform-menu($transform-gpu);
+    @include global-transform($transform-gpu);
+    @include coupled-menu($coupled-menu);
   }
 }

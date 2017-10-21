@@ -1,7 +1,7 @@
 /*
 | Menu |
 
-Using before global container of content
+Using before global container with content
 * Exemple *
 <body>
     <div class="menu">
@@ -19,120 +19,8 @@ Using before global container of content
 */
 
 // *** Import ***
-// @import "_variables";
-@import "_mixins";
-
-// // *** Variables ***
-//
-// // Dark pad
-// $menu-z-index: 99;
-// $menu-background: rgba(20, 20, 20, 0.3);
-// $menu-transition: all;
-// $menu-transition-speed: 0.7s;
-// $menu-transition-type: ease-out;
-//
-// // Menu bar
-// $menu__bar-width: 250px;
-// $menu__bar-border-value: 1px solid;
-// $menu__bar-border-color: rgba(0, 0, 0, 0.4);
-// $menu__bar-background: rgba(236, 240, 241, 1.0);
-// $menu__bar-transition: all;
-// $menu__bar-transition-speed: 0.4s;
-// $menu__bar-transition-type: ease-out;
-// $menu__bar-box-shadow-value: -10px 0 30px 0;
-// $menu__bar-box-shadow-color: rgba(255, 51, 71, 0.7);
-//
-// // Just a website
-// $global__menu-translate: -250px;
-// $global__menu-filter-value: 3px;
-// $global__menu-filter: blur($global__menu-filter-value);
-//
-// // For mixins
-// $menu__bar-border-left: false;
-// $menu__bar-box-shadow: false;
-//
-// // *** Mixins ***
-// @mixin menu-transition() {
-//     -webkit-transition: $menu-transition $menu-transition-speed $menu-transition-type;
-//        -moz-transition: $menu-transition $menu-transition-speed $menu-transition-type;
-//         -ms-transition: $menu-transition $menu-transition-speed $menu-transition-type;
-//          -o-transition: $menu-transition $menu-transition-speed $menu-transition-type;
-//             transition: $menu-transition $menu-transition-speed $menu-transition-type;
-// }
-// @mixin menu__bar-border-left($menu__bar-border-left) {
-//     @if $menu__bar-border-left == false {
-//         -webkit-border-left: none;
-//            -moz-border-left: none;
-//             -ms-border-left: none;
-//              -o-border-left: none;
-//                 border-left: none;
-//     }
-//     @if $menu__bar-border-left == true {
-//         -webkit-border-left: $menu__bar-border-value $menu__bar-border-color;
-//            -moz-border-left: $menu__bar-border-value $menu__bar-border-color;
-//             -ms-border-left: $menu__bar-border-value $menu__bar-border-color;
-//              -o-border-left: $menu__bar-border-value $menu__bar-border-color;
-//                 border-left: $menu__bar-border-value $menu__bar-border-color;
-//     }
-// }
-// @mixin menu__bar-box-shadow($menu__bar-box-shadow) {
-//     @if $menu__bar-box-shadow == false {
-//         -webkit-box-shadow: none;
-//            -moz-box-shadow: none;
-//             -ms-box-shadow: none;
-//              -o-box-shadow: none;
-//                 box-shadow: none;
-//     }
-//     @if $menu__bar-box-shadow == true {
-//         -webkit-box-shadow: $menu__bar-box-shadow-value $menu__bar-box-shadow-color;
-//            -moz-box-shadow: $menu__bar-box-shadow-value $menu__bar-box-shadow-color;
-//             -ms-box-shadow: $menu__bar-box-shadow-value $menu__bar-box-shadow-color;
-//              -o-box-shadow: $menu__bar-box-shadow-value $menu__bar-box-shadow-color;
-//                 box-shadow: $menu__bar-box-shadow-value $menu__bar-box-shadow-color;
-//     }
-// }
-// @mixin menu__bar-transform() {
-//     -webkit-transform: translate3d(100%, 0, 0);
-//        -moz-transform: translate3d(100%, 0, 0);
-//         -ms-transform: translate3d(100%, 0, 0);
-//          -o-transform: translate3d(100%, 0, 0);
-//             transform: translate3d(100%, 0, 0);
-// }
-// @mixin menu__bar-transition() {
-//     -webkit-transition: $menu__bar-transition $menu__bar-transition-speed $menu__bar-transition-type;
-//        -moz-transition: $menu__bar-transition $menu__bar-transition-speed $menu__bar-transition-type;
-//         -ms-transition: $menu__bar-transition $menu__bar-transition-speed $menu__bar-transition-type;
-//          -o-transition: $menu__bar-transition $menu__bar-transition-speed $menu__bar-transition-type;
-//             transition: $menu__bar-transition $menu__bar-transition-speed $menu__bar-transition-type;
-// }
-// @mixin menu__bar-active() {
-//     -webkit-transform: none;
-//        -moz-transform: none;
-//         -ms-transform: none;
-//          -o-transform: none;
-//             transform: none;
-// }
-// @mixin global-transition() {
-//     -webkit-transition: $menu__bar-transition $menu__bar-transition-speed $menu__bar-transition-type;
-//        -moz-transition: $menu__bar-transition $menu__bar-transition-speed $menu__bar-transition-type;
-//         -ms-transition: $menu__bar-transition $menu__bar-transition-speed $menu__bar-transition-type;
-//          -o-transition: $menu__bar-transition $menu__bar-transition-speed $menu__bar-transition-type;
-//             transition: $menu__bar-transition $menu__bar-transition-speed $menu__bar-transition-type;
-// }
-// @mixin global-transform-menu-active() {
-//     -webkit-transform: translate3d($global__menu-translate, 0, 0);
-//        -moz-transform: translate3d($global__menu-translate, 0, 0);
-//         -ms-transform: translate3d($global__menu-translate, 0, 0);
-//          -o-transform: translate3d($global__menu-translate, 0, 0);
-//             transform: translate3d($global__menu-translate, 0, 0);
-// }
-// @mixin global__menu-filter() {
-//     -webkit-filter: $global__menu-filter;
-//        -moz-filter: $global__menu-filter;
-//         -ms-filter: $global__menu-filter;
-//          -o-filter: $global__menu-filter;
-//             filter: $global__menu-filter;
-// }
+@import "_variables",
+        "_mixins";
 
 // *** Styles ***
 .menu {
@@ -160,9 +48,9 @@ Using before global container of content
         width: $menu__bar-width;
         background: $menu__bar-background;
         @include menu__bar-transition();
-        @include menu__bar-transform();
-        @include menu__bar-border-left(false);
-        @include menu__bar-box-shadow(false);
+        @include menu__bar-transform($transform-gpu);
+        @include menu__bar-border-left($menu__bar-border-left);
+        @include menu__bar-box-shadow($menu__bar-box-shadow);
 
         &.active {
             @include menu__bar-active();
@@ -176,6 +64,6 @@ Using before global container of content
 
     &.menu-active {
         @include global__menu-filter();
-        @include global-transform-menu-active();
+        @include global-transform-menu-active($transform-gpu);
     }
 }

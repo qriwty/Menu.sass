@@ -1,3 +1,32 @@
+// *** Variables ***
+// Dark pad
+$menu-z-index: 99;
+$menu-background: rgba(20, 20, 20, 0.3);
+$menu-transition: all;
+$menu-transition-speed: 0.7s;
+$menu-transition-type: ease-out;
+
+// Menu bar
+$menu__bar-width: 250px;
+$menu__bar-border-value: 1px solid;
+$menu__bar-border-color: rgba(0, 0, 0, 0.4);
+$menu__bar-background: rgba(236, 240, 241, 1.0);
+$menu__bar-transition: all;
+$menu__bar-transition-speed: 0.4s;
+$menu__bar-transition-type: ease-out;
+$menu__bar-box-shadow-value: -10px 0 30px 0;
+$menu__bar-box-shadow-color: rgba(255, 51, 71, 0.7);
+
+// Just a website
+$global__menu-translate: -250px;
+$global__menu-filter-value: 3px;
+$global__menu-filter: blur($global__menu-filter-value);
+
+// For mixins
+$menu__bar-border-left: true;
+$menu__bar-box-shadow: true;
+$transform-gpu: false;
+
 // *** Mixins ***
 @mixin menu-transition() {
     -webkit-transition: $menu-transition $menu-transition-speed $menu-transition-type;

@@ -19,11 +19,12 @@ $menu__bar-box-shadow-value: -10px 0 30px 0;
 $menu__bar-box-shadow-color: rgba(255, 51, 71, 0.7);
 
 // Global container
-$global__menu-translate: -250px;
-$global__menu-filter-value: 3px;
-$global__menu-filter: blur($global__menu-filter-value);
+$global-translate: -250px;
+$global-filter-value: 3px;
+$global-filter: blur($global-filter-value);
 
-// For mixins
+// Parameters
 $menu__bar-border-left: false;
 $menu__bar-box-shadow: false;
 $transform-gpu: false;
+$global-filter-use: false;

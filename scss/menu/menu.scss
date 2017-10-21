@@ -1,21 +1,5 @@
 /*
-| Menu |
-
-Using before global container with content
-* Exemple *
-<body>
-    <div class="menu">
-        <div class="menu__bar">
-            <div class="bar-content">
-                {{ Menu content }}
-            </div>
-        </div>
-    </div>
-
-    <div class="global">
-        {{ Site content }}
-    </div>
-</body>
+  | Menu |
 */
 
 // *** Import ***
@@ -63,7 +47,7 @@ Using before global container with content
   @include global-transition();
 
   &.menu-active {
-    @include global__menu-filter();
+    @include global-filter($global-filter-use);
     @include global-transform-menu($transform-gpu);
   }
 }

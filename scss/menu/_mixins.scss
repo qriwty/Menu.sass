@@ -41,13 +41,19 @@
 }
 @mixin global-transform-menu($transform-gpu) {
   @if $transform-gpu == true {
-    transform: translate3d($global__menu-translate, 0, 0);
+    transform: translate3d($global-translate, 0, 0);
   }
 
   @if $transform-gpu == false {
-    transform: translateX($global__menu-translate);
+    transform: translateX($global-translate);
   }
 }
-@mixin global__menu-filter() {
-  filter: $global__menu-filter;
+@mixin global-filter($global-filter-use) {
+  @if $global-filter-use == true {
+    filter: $global-filter;
+  }
+
+  @if $global-filter-use == false {
+    filter: none;
+  }
 }

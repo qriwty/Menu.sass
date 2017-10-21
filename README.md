@@ -1,18 +1,24 @@
 # Menu.sass
 ### | Menu |
-**Using before global container with content**
-## Exemple 
+**Using before global container with content of website**
+## Exemple HTML
 ```
 <body>
     <div class="menu">
         <div class="menu__bar">
-            <div class="bar-content">
-                {{ Menu content }}
-            </div>
+          {{ Menu content }}
         </div>
     </div>
     <div class="global">
         {{ Site content }}
     </div>
 </body>
+```
+## Exemple Pug
+```
+div.menu
+  div.menu__bar
+    {{ Menu content }}
+div.global
+  {{ Site content }}
 ```
